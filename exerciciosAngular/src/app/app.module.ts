@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ExercisesComponent } from './exercises/exercises.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,10 @@ import { ExercisesComponent } from './exercises/exercises.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    NoopAnimationsModule,
+    MatInputModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

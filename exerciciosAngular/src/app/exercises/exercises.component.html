@@ -1,5 +1,11 @@
-<h1>Nome: {{name}} </h1> 
+<h1>Nome: {{name}} </h1>
 
-<button (click)= "showMessage(name)" >CLICK ME</button>
 
-<input [(ngModel)] = "name">    
+<div class="card-background">
+    
+        <mat-form-field class="example-full-width">
+            <mat-label>Favorite food</mat-label>
+            <input matInput [placeholder]="name" [(ngModel)]="name">
+        </mat-form-field>
+    
+</div>

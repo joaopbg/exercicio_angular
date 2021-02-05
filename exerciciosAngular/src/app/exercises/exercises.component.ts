@@ -10,10 +10,12 @@ export class ExercisesComponent implements OnInit, OnDestroy {
 
   public name: string = 'João P'
 
+  
+
   constructor() { }
 
   ngOnInit(): void {
-    this.showMessage("")
+    
   }
   ngOnDestroy(): void {
     
