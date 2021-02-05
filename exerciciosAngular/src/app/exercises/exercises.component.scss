@@ -1,6 +1,16 @@
 .card-background {
-    background-color: darkred;
+    background-color: darkgray;
     text-align: center;
     margin-top: 6%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+}
+
+.displayResult {
+    font-size: 40px;
+    background-color: limegreen;
+    border: 1px solid red;
+    padding: 5px 15px 5px 350px;
 
 }

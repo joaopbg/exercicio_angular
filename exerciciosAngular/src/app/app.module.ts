@@ -6,6 +6,17 @@ import { AppComponent } from './app.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
+
+
+
+
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -16,7 +27,11 @@ import {MatInputModule} from '@angular/material/input';
     BrowserModule,
     FormsModule,
     NoopAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    MatGridListModule
+    
+    
     
   ],
   providers: [],

@@ -1,11 +1,28 @@
 <h1>Nome: {{name}} </h1>
 
+<input placeholder="test" [(ngModel)]="displayExpression">
+
 
 <div class="card-background">
-    
-        <mat-form-field class="example-full-width">
-            <mat-label>Favorite food</mat-label>
-            <input matInput [placeholder]="name" [(ngModel)]="name">
-        </mat-form-field>
-    
+    <mat-grid-list cols="4" rowHeight="5:1" aria-rowspan="6" aria-colspan="4">
+        <div>
+            <label class="displayResult">{{displayExpression}}</label>
+        </div>
+        <mat-grid-tile><button mat-raised-button (click)="setDisplayExpression('1')" color={{buttonType}}>1</button></mat-grid-tile>
+        <mat-grid-tile><button mat-raised-button (click)="setDisplayExpression('2')" color={{buttonType}}>2</button></mat-grid-tile>
+        <mat-grid-tile><button mat-raised-button (click)="setDisplayExpression('3')" color={{buttonType}}>3</button></mat-grid-tile>
+        <mat-grid-tile><button mat-raised-button (click)="setDisplayExpression('+')" color={{buttonType}}>+</button></mat-grid-tile>
+        <mat-grid-tile><button mat-raised-button (click)="setDisplayExpression('4')" color={{buttonType}}>4</button></mat-grid-tile>
+        <mat-grid-tile><button mat-raised-button (click)="setDisplayExpression('5')" color={{buttonType}}>5</button></mat-grid-tile>
+        <mat-grid-tile><button mat-raised-button (click)="setDisplayExpression('6')" color={{buttonType}}>6</button></mat-grid-tile>
+        <mat-grid-tile><button mat-raised-button (click)="setDisplayExpression('-')" color={{buttonType}}>-</button></mat-grid-tile>
+        <mat-grid-tile><button mat-raised-button (click)="setDisplayExpression('7')" color={{buttonType}}>7</button></mat-grid-tile>
+        <mat-grid-tile><button mat-raised-button (click)="setDisplayExpression('8')" color={{buttonType}}>8</button></mat-grid-tile>
+        <mat-grid-tile><button mat-raised-button (click)="setDisplayExpression('9')" color={{buttonType}}>9</button></mat-grid-tile>
+        <mat-grid-tile><button mat-raised-button (click)="setDisplayExpression('*')" color={{buttonType}}>*</button></mat-grid-tile>
+        <mat-grid-tile><button mat-raised-button (click)="setDisplayExpression('0')" color={{buttonType}}>0</button></mat-grid-tile>
+        <mat-grid-tile><button mat-raised-button (click)="getResult()" color={{buttonType}}>=</button></mat-grid-tile>
+        <mat-grid-tile><button mat-raised-button (click)="resetDisplayExpression()" color={{buttonType}}>C</button></mat-grid-tile>
+        <mat-grid-tile><button mat-raised-button (click)="setDisplayExpression('/')" color={{buttonType}}>/</button></mat-grid-tile>
+    </mat-grid-list>            
 </div>
