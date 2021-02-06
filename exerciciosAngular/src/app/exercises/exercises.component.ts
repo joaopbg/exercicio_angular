@@ -11,27 +11,14 @@ export class ExercisesComponent implements OnInit, OnDestroy {
   public buttonType: string = "primary"
   public displayExpression: string = ''
   private dataExpression = []
+  private operationsArray = []
   
-  
-
-
 
   constructor() { }
 
-  ngOnInit(): void {
-    
-    let a = "1"
-    let b = Number(a)
-    a = b.toString()
-  }
-  ngOnDestroy(): void {
-    
-  }
+  ngOnInit(): void {}
 
-  public showMessage(name: string){
-    alert("Hello "+ name)
-
-  }
+  ngOnDestroy(): void {}
 
   public setDisplayExpression(value: string){
     this.displayExpression = this.displayExpression+value
@@ -39,32 +26,98 @@ export class ExercisesComponent implements OnInit, OnDestroy {
   }
 
   public resetDisplayExpression(){
+      this.cleanData()
+      this.dataExpression = []    
+
+  }
+
+  private arrayControler(){
+      return this.dataExpression.length > 1
+  }
+
+
+
+  private cleanData(){
     this.displayExpression = ''
+  }
+
+  private addDataToExpression(displayExpression, operation: string){
+    this.dataExpression.push(displayExpression)
+    this.operationsArray.push(operation)
+    
+    this.cleanData()
+
+  }
+  
+
+  public sum(displayExpression){
+      this.addDataToExpression(displayExpression,'+')
+
+
+
+  }
+  public sub(displayExpression){
+    this.addDataToExpression(displayExpression,'-')
+
+
+  }
+  public mult(displayExpression){
+    this.addDataToExpression(displayExpression,'*')
+
+
+  } 
+  public division(displayExpression){
+    this.addDataToExpression(displayExpression,'/')
 
   }
 
   public getResult(){
-    
+    this.addDataToExpression(this.displayExpression, '=')
+    this.solve(this.dataExpression, this.operationsArray)
+    this.dataExpression = []
+    this.operationsArray = []
+
+  }
+
+  private solve(dataExpression, operationsArray){
+    if(this.dataExpression.length > 1){
+      do{
+        this.calc(dataExpression, operationsArray)
   
-  }
-  public sum(displayExpression){
-    
-
-  }
-  public sub(displayExpression){
-
-  }
-  public mult(displayExpression){
-
-  } 
-  public division(displayExpression){
-
-  }
-
-  public numPressed(buttonValue:string){
-    this.displayExpression.concat(buttonValue);
+      }while(this.dataExpression.length > 1)
+    }
+    this.displayExpression = this.dataExpression[0]
     
   }
-  
 
+  private calc(dataExpression, operationsArray){
+    let result: Number
+    let aux1 = [this.dataExpression[0],this.dataExpression[1]]
+    let aux2 = this.operationsArray[0]
+    this.operationsArray.shift()
+    switch (aux2){
+      case '+':
+        result = Number(aux1[0])+Number(aux1[1])
+        this.dataExpression.shift()
+        this.dataExpression[0] = result.toString()
+        break
+      case '-':
+        result = Number(aux1[0])-Number(aux1[1])
+        this.dataExpression.shift()
+        this.dataExpression[0] = result.toString()
+        break
+      case '*':
+        result = Number(aux1[0])*Number(aux1[1])
+        this.dataExpression.shift()
+        this.dataExpression[0] = result.toString()
+        break
+      case '/':
+        result = Number(aux1[0])/Number(aux1[1])
+        this.dataExpression.shift()
+        this.dataExpression[0] = result.toString()
+        
+        break
+      default:
+    }
+  }
 }
