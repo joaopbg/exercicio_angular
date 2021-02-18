@@ -1,4 +1,4 @@
-.card-background {
+.display-background {
     background-color: darkgray;
     text-align: center;
     margin-top: 6%;
@@ -7,10 +7,11 @@
 
 }
 
-.displayResult {
-    font-size: 40px;
-    background-color: limegreen;
-    border: 1px solid red;
-    padding: 5px 15px 5px 350px;
+.keyboard-structure {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.keyboard {
+    margin-top: 12px;
 
 }

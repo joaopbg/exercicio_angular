@@ -8,6 +8,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { CardButtonComponent } from './card-button/card-button.component';
+import { DisplayComponent } from './display/display.component';
 
 
 
@@ -21,7 +23,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
 @NgModule({
   declarations: [
     AppComponent,
-    ExercisesComponent
+    ExercisesComponent,
+    CardButtonComponent,
+    DisplayComponent
   ],
   imports: [
     BrowserModule,
